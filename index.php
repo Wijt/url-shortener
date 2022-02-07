@@ -12,13 +12,13 @@
     }
 ?>
 <!DOCTYPE html>
-<html>
+<html style="overflow: auto;">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing - Free Bulma template</title>
+    <title> primelab | url-shortener </title>
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
@@ -60,15 +60,15 @@
                 <div class="container">
                     <div class="navbar-brand">
                         <a class="navbar-item" href="../">
-                            <img src="http://bulma.io/images/bulma-type-white.png" alt="Logo">
+                            <img style="max-height: none !important;" width="150" src="img/logo.png" alt="Logo">
                         </a>
-                        <span class="navbar-burger burger" data-target="navbarMenu">
+                        <!--<span class="navbar-burger burger" data-target="navbarMenu">
                             <span></span>
                             <span></span>
                             <span></span>
-                        </span>
+                        </span>!-->
                     </div>
-                    <div id="navbarMenu" class="navbar-menu">
+                    <!--<div id="navbarMenu" class="navbar-menu">
                         <div class="navbar-end">
                             <span class="navbar-item">
                                 <a class="button is-white is-outlined" href="#">
@@ -103,7 +103,7 @@
                                 </a>
                             </span>
                         </div>
-                    </div>
+                    </div>!-->
                 </div>
             </nav>
             </div>
@@ -112,10 +112,10 @@
                 <div class="container has-text-centered">
                     <div class="column is-6 is-offset-3">
                         <h1 class="title">
-                            Coming Soon
+                                short links, big results
                         </h1>
                         <h2 class="subtitle">
-                            $this is the best software platform for running an internet business. We handle billions of dollars every year for forward-thinking businesses around the world.
+                              primelab, generates short url for your incomprehensible links 
                         </h2>
                         <div class="box">
                             <div class="field is-grouped">
