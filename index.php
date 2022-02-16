@@ -55,7 +55,7 @@
 
 <body>
     <section class="hero is-info is-fullheight">
-        <div class="hero-head">
+        <div class="hero-head pt-3">
             <nav class="navbar">
                 <div class="container">
                     <div class="navbar-brand">
