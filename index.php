@@ -59,7 +59,7 @@
             <nav class="navbar">
                 <div class="container">
                     <div class="navbar-brand">
-                        <a class="navbar-item" href="../">
+                        <a class="navbar-item" href="#">
                             <img style="max-height: none !important;" width="150" src="img/logo.png" alt="Logo">
                         </a>
                         <!--<span class="navbar-burger burger" data-target="navbarMenu">
