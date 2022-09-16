@@ -1,6 +1,7 @@
 <?php
     error_reporting(E_ALL); // Error reporting
     require "database.php"; // DB connection
+    require "config.php"; // index configs
     $db = new Database();   // DB Instantiate
 
     function generateRandomString($length = 10) {
@@ -29,5 +30,5 @@
 
     $ins = $db->insert("relations", array("nickname" => $randomId, "url" => $url));
 
-    echo "localhost?x=".$randomId;
+    echo $mainpage."?x=".$randomId;
 ?>

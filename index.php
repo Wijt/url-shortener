@@ -150,7 +150,7 @@
                             icon: 'success',
                             title: "It's done!",
                             text: "It's on your clipboard!",
-                            footer: 'your short link:&nbsp<a target="_blank" href="//'+data+'">'+data+'</a>'
+                            footer: `your short link:&nbsp<a target="_blank" href="${data}">${data}</a>`
                         });
                     }
                 )
