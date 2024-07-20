@@ -75,3 +75,15 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Table structure for table `logs`
+--
+
+CREATE TABLE `logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nickname` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `redirected_to` text COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `access_time` datetime NOT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;

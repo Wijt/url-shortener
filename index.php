@@ -1,32 +1,41 @@
 <?php
-    if (isset($_GET['x'])) {
-        error_reporting(E_ALL); // Error reporting
-        require "database.php"; // DB connection
-        $db = new Database();   // DB Instantiate
+if (isset($_GET['x'])) {
+    error_reporting(E_ALL); // Error reporting
+    require "database.php"; // DB connection
+    $db = new Database();   // DB Instantiate
 
-        $result = $db->row("*", "relations", array("nickname"=>$_GET['x']));
-        if($result){
-            header("Location: ".$result["url"]);
-            die();
-        }
+    // Fetch the URL associated with the nickname
+    $result = $db->row("*", "relations", array("nickname" => $_GET['x']));
+    if ($result) {
+        // Log the access
+        $nickname = $_GET['x'];
+        $access_time = date('Y-m-d H:i:s');
+        $ip_address = $_SERVER['REMOTE_ADDR'];
+        $db->insert("logs", array("nickname" => $nickname, "access_time" => $access_time, "ip_address" => $ip_address, "redirected_to" => $result["url"]));
+
+        // Redirect to the URL
+        header("Location: " . $result["url"]);
+        exit();
+    } else {
+        // If no matching URL found, redirect to the homepage
+        header("Location: /");
+        exit();
     }
+}
 ?>
 <!DOCTYPE html>
 <html style="overflow: auto;">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> primelab | url-shortener </title>
+    <title> frosystudio | url-shortener </title>
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <!-- Bulma Version 0.9.0-->
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
     <style>
         html,body {
@@ -115,7 +124,7 @@
                                 short links, big results
                         </h1>
                         <h2 class="subtitle">
-                              primelab, generates short url for your incomprehensible links 
+                              this site, generates short url for your incomprehensible links 
                         </h2>
                         <div class="box">
                             <div class="field is-grouped">
@@ -159,8 +168,7 @@
     </script>
 
     <script type="text/javascript">
-        // The following code is based off a toggle menu by @Bradcomp
-        // source: https://gist.github.com/Bradcomp/a9ef2ef322a8e8017443b626208999c1
+        /*
         (function() {
             var burger = document.querySelector('.burger');
             var menu = document.querySelector('#'+burger.dataset.target);
@@ -169,7 +177,7 @@
                 menu.classList.toggle('is-active');
             });
         })();
-
+*/
     </script>
 </body>
 
